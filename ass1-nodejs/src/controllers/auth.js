@@ -30,7 +30,9 @@ export const signup = async (req, res) => {
       password: hashedPassword,
       //   password,
     });
-    const token = jwt.sign({ _id: user._id }, "bantoi", { expiresIn: "7d" });
+    const token = jwt.sign({ _id: user._id }, "banThayDat", {
+      expiresIn: "7d",
+    });
     user.password = undefined;
 
     // user.password = undefined;
@@ -72,7 +74,7 @@ export const signin = async (req, res) => {
       });
     }
     const token = jwt.sign({ _id: user._id }, "banThayDat", {
-      expiresIn: "1h",
+      expiresIn: "7d",
     });
 
     user.password = undefined;

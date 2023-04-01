@@ -11,7 +11,7 @@ export const checkPermission = async (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
 
     // xác thực jwt token
-    const { _id } = jwt.verify(token, "banthatDat");
+    const { _id } = jwt.verify(token, "banThayDat");
 
     // lấy thông tin user từ database
     const user = await User.findById(_id);
